@@ -15,7 +15,17 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SISwift"),
+            name: "SystemInfo",
+            dependencies: [],
+            path: "Sources/SISwift/SystemInfo"
+        ),
+        .target(
+            name: "SISwift",
+            dependencies: [
+                .target(name: "SystemInfo")
+            ],
+            path: "Sources/SISwift/Swift"
+        ),
         .testTarget(
             name: "SISwiftTests",
             dependencies: ["SISwift"]),
