@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SISystemInfo.swift
 //  
 //
 //  Created by Daniel Koller on 08.10.23.

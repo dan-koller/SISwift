@@ -10,15 +10,23 @@
 
 #include <stdio.h>
 
+/*
+ * Static methods declared in this file shouldn't be implemented directly.
+ * They are just helper methods for the public methods.
+ */
+
 /* Get the cpu architecture */
 const char* getCPUArchitecture(void);
+
 /* Retreive the current cpu load */
 float getCPULoad(void);
 static float calculateCPULoad(unsigned long long idleTicks, unsigned long long totalTicks);
+
 /* Retreive the current memory usage */
 float getSystemMemoryUsage(void);
 static float getMemoryUsage(FILE *fp);
 static float parseMemoryValue(const char *b);
+
 /* Retreive the current disk usage */
 float getDiskUsage(void);
 
