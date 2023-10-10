@@ -1,5 +1,11 @@
 #  SISwift
 
+A small Swift package that allows you to access system information like CPU Architecture, CPU Usage, Memory Usage, and Disk Usage on macOS.
+
+[![Swift](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://swift.org)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://swift.org/package-manager)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 ## Intro
 
 When I first started development with macOS, I often needed to access system information like the cpu architecture, system memory usage, and so on. I haven't found simple way to access this data using Swift, so I initially created a Wrapper for some C code, that allowed my to monitor the system. SISwift introduces a simple way to access system information using Swift.

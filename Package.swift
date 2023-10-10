@@ -17,14 +17,14 @@ let package = Package(
         .target(
             name: "SystemInfo",
             dependencies: [],
-            path: "Sources/SISwift/SystemInfo"
+            path: "Sources/SystemInfo"
         ),
         .target(
             name: "SISwift",
             dependencies: [
                 .target(name: "SystemInfo")
             ],
-            path: "Sources/SISwift/Swift"
+            path: "Sources/SISwift"
         ),
         .testTarget(
             name: "SISwiftTests",
