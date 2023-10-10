@@ -8,7 +8,7 @@ A small Swift package that allows you to access system information like CPU Arch
 
 ## Intro
 
-When I first started development with macOS, I often needed to access system information like the cpu architecture, system memory usage, and so on. I haven't found simple way to access this data using Swift, so I initially created a Wrapper for some C code, that allowed my to monitor the system. SISwift introduces a simple way to access system information using Swift.
+When I first started development with macOS, I often needed to access system information like the cpu architecture, system memory usage, and so on. I haven't found simple way to access this data using Swift, so I initially created a Wrapper for some C code, that allowed me to monitor the system. SISwift now introduces a simple way to access system information using Swift.
 
 Features:
 
