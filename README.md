@@ -1,4 +1,4 @@
-#  SISwift
+# SISwift
 
 A small Swift package that allows you to access system information like CPU Architecture, CPU Usage, Memory Usage, and Disk Usage on macOS.
 
@@ -12,20 +12,30 @@ When I first started development with macOS, I often needed to access system inf
 
 Features:
 
-- ✔️ CPU Architecture
-- ✔️ CPU Usage
-- ✔️ Memory Usage
-- ✔️ Disk Usage
-- ✔️ Simple API
-- ✔️ Works on Intel and Apple Silicon Macs
-- ✔️ Works on macOS 10.15 and above
+-   ✔️ CPU Architecture
+-   ✔️ CPU Usage
+-   ✔️ Memory Usage
+-   ✔️ Disk Usage
+-   ✔️ Simple API
+-   ✔️ Works on Intel and Apple Silicon Macs
+-   ✔️ Works on macOS 10.15 and above
 
 ## Installation
+
+### Swift Package Manager
 
 [Swift Package Manager](https://swift.org/package-manager/) is the simplest way to install for Xcode projects. Simply add the following Package Dependency:
 
 ```
 https://github.com/dan-koller/SISwift
+```
+
+### Carthage
+
+Include this line in your `Cartfile`:
+
+```
+github "dan-koller/SISwift"
 ```
 
 ## Usage
@@ -34,7 +44,7 @@ https://github.com/dan-koller/SISwift
 import SISwift
 
 /*
-* CPU Architecture is a String that can be:
+* CPU Architecture is a string that can be:
 * - x86_64
 * - arm64
 */
@@ -43,7 +53,7 @@ import SISwift
 let cpuArch: String = SISystemInfo.getArchitecture()
 
 /*
-* CPU Usage, Memory Usage and Disk Usage are all Floats between 0 and 1
+* CPU Usage, Memory Usage and Disk Usage are all floats between 0 and 1
 * 0 = 0%
 * 1 = 100%
 */

@@ -16,7 +16,19 @@ protocol SystemInfoInterface {
     static func printSystemInfo()
 }
 
-public class SISystemInfo : SystemInfoInterface {
+public class SISwift : SystemInfoInterface {
+    
+    /// Get the cpu architecture of your system as string.
+    ///
+    /// ```
+    /// SISystemInfo.getArchitecture() // "x86_64"
+    /// ```
+    ///
+    /// > Warning: If for some reason the method fails to retreive
+    /// > a valid architecture, it won't throw an error but rather
+    /// > returns the string `Unknown Architecture`.
+    ///
+    /// - Returns: The current system cpu architecture.
     public static func getArchitecture() -> String {
         guard let cpuArchitecture = getCPUArchitecture() else {
             return "Unknown architecture"
