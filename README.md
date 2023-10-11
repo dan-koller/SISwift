@@ -4,6 +4,7 @@ A small Swift package that allows you to access system information like CPU Arch
 
 [![Swift](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://swift.org)
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://swift.org/package-manager)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Intro
