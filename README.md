@@ -1,11 +1,13 @@
 # SISwift
 
-A small Swift package that allows you to access system information like CPU Architecture, CPU Usage, Memory Usage, and Disk Usage on macOS.
+A Swift package that allows you to easily access system information like CPU Architecture, CPU Usage, Memory Usage, Disk Usage and many more on macOS.
 
 [![Swift](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://swift.org)
 [![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://swift.org/package-manager)
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
 ## Intro
 
@@ -20,6 +22,10 @@ Features:
 -   ✔️ Simple API
 -   ✔️ Works on Intel and Apple Silicon Macs
 -   ✔️ Works on macOS 10.15 and above
+
+... and many more functions. Check out the [documentation](Docs/Documentation.md) for more information.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
 ## Installation
 
@@ -39,7 +45,11 @@ Include this line in your `Cartfile`:
 github "dan-koller/SISwift"
 ```
 
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
+
 ## Usage
+
+I hope it is pretty self-explanatory. If you have any questions, feel free to open an issue. Here are some examples:
 
 ```swift
 import SISwift
@@ -71,6 +81,8 @@ let diskUsage: Float = SISystemInfo.getDiskUsage()
 // Just print the system info
 SISystemInfo.printSystemInfo()
 ```
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
 ## License
 
