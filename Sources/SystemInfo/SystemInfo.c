@@ -152,7 +152,10 @@ float getDiskUsage(void) {
     return usedSpace;
 }
 
-/* Get hostname */
+/*
+ * Retrieves and returns the hostname as a character array (string),
+ * such as "My-MBP".
+ */
 const char* getHostname(void) {
     char hostname[MAXHOSTNAMELEN];
     if (gethostname(hostname, MAXHOSTNAMELEN) == -1) {
@@ -162,7 +165,10 @@ const char* getHostname(void) {
     return strdup(hostname);
 }
 
-/* Get model name (like "MacBookPro15,4") */
+/* 
+ * Retrieves and returns the Mac model as a character array (string),
+ * such as "MacBookPro15,4".
+ */
 const char* getModelname(void) {
     size_t len = 0;
     if (sysctlbyname("hw.model", NULL, &len, NULL, 0) == -1) {
@@ -185,7 +191,10 @@ const char* getModelname(void) {
     return model;
 }
 
-/* Get current OS version */
+/*
+ * Retrieves and returns the current version of macOS as a character
+ * array (string), such as "13.5.2".
+ */
 const char* getOSVersion(void) {
     FILE* fp = popen("sw_vers -productVersion", "r");
     if (fp == NULL) {
@@ -202,7 +211,7 @@ const char* getOSVersion(void) {
 
     pclose(fp);
 
-    // Remove newline characters from the version string
+    /* Remove newline characters from the version string */
     char* newline = strchr(version, '\n');
     if (newline != NULL) {
         *newline = '\0';
@@ -211,7 +220,10 @@ const char* getOSVersion(void) {
     return strdup(version);
 }
 
-/* Get current OS name */
+/*
+ * Retrieves and returns the name of the OS as a character array
+ * (string), such as "macOS".
+ */
 const char* getOSName(void) {
     FILE* fp = popen("sw_vers -productName", "r");
     if (fp == NULL) {
@@ -228,7 +240,7 @@ const char* getOSName(void) {
 
     pclose(fp);
 
-    // Remove newline characters from the name string
+    /* Remove newline characters from the name string */
     char* newline = strchr(name, '\n');
     if (newline != NULL) {
         *newline = '\0';
@@ -237,7 +249,10 @@ const char* getOSName(void) {
     return strdup(name);
 }
 
-/* Get current kernel name */
+/*
+ * Retrieves and returns the kernel name of the OS as a character
+ * array (string), such as "Darwin".
+ */
 const char* getKernelName(void) {
     struct utsname systemInfo;
     if (uname(&systemInfo) == -1) {
