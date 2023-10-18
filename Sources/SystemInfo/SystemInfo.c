@@ -14,6 +14,7 @@
 #include <mach/mach.h>
 #include <sys/mount.h>
 #include <sys/param.h>
+#include <sys/sysctl.h>
 #include <sys/utsname.h>
 
 /*
@@ -150,3 +151,99 @@ float getDiskUsage(void) {
     float usedSpace = 1.0f - (freeSpace / totalSpace);
     return usedSpace;
 }
+
+/* Get hostname */
+const char* getHostname(void) {
+    char hostname[MAXHOSTNAMELEN];
+    if (gethostname(hostname, MAXHOSTNAMELEN) == -1) {
+        perror("gethostname");
+        return NULL;
+    }
+    return strdup(hostname);
+}
+
+/* Get model name (like "MacBookPro15,4") */
+const char* getModelname(void) {
+    size_t len = 0;
+    if (sysctlbyname("hw.model", NULL, &len, NULL, 0) == -1) {
+        perror("sysctlbyname");
+        return NULL;
+    }
+    
+    char* model = (char*)malloc(len);
+    if (model == NULL) {
+        perror("malloc");
+        return NULL;
+    }
+    
+    if (sysctlbyname("hw.model", model, &len, NULL, 0) == -1) {
+        perror("sysctlbyname");
+        free(model);
+        return NULL;
+    }
+    
+    return model;
+}
+
+/* Get current OS version */
+const char* getOSVersion(void) {
+    FILE* fp = popen("sw_vers -productVersion", "r");
+    if (fp == NULL) {
+        perror("popen");
+        return NULL;
+    }
+
+    char version[128];
+    if (fgets(version, sizeof(version), fp) == NULL) {
+        perror("fgets");
+        pclose(fp);
+        return NULL;
+    }
+
+    pclose(fp);
+
+    // Remove newline characters from the version string
+    char* newline = strchr(version, '\n');
+    if (newline != NULL) {
+        *newline = '\0';
+    }
+
+    return strdup(version);
+}
+
+/* Get current OS name */
+const char* getOSName(void) {
+    FILE* fp = popen("sw_vers -productName", "r");
+    if (fp == NULL) {
+        perror("popen");
+        return NULL;
+    }
+
+    char name[128];
+    if (fgets(name, sizeof(name), fp) == NULL) {
+        perror("fgets");
+        pclose(fp);
+        return NULL;
+    }
+
+    pclose(fp);
+
+    // Remove newline characters from the name string
+    char* newline = strchr(name, '\n');
+    if (newline != NULL) {
+        *newline = '\0';
+    }
+
+    return strdup(name);
+}
+
+/* Get current kernel name */
+const char* getKernelName(void) {
+    struct utsname systemInfo;
+    if (uname(&systemInfo) == -1) {
+        perror("uname");
+        return NULL;
+    }
+    return strdup(systemInfo.sysname);
+}
+

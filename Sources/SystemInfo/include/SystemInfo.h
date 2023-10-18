@@ -30,4 +30,19 @@ static float parseMemoryValue(const char *b);
 /* Retreive the current disk usage */
 float getDiskUsage(void);
 
+/* Get the hostname (e.g. Daniels-MBP) */
+const char* getHostname(void);
+
+/* Get the model name (e.g. MacbookPro 15,4) */
+const char* getModelname(void);
+
+/* Get OS version */
+const char* getOSVersion(void);
+
+/* Get OS name */
+const char* getOSName(void);
+
+/* Get kernel name */
+const char* getKernelName(void);
+
 #endif /* SystemInfo_h */
