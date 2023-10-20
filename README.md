@@ -84,6 +84,12 @@ SISystemInfo.printSystemInfo()
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
 
+## Contributing
+
+Contributions are welcome. Feel free to open an issue if you have any questions or want to discuss a new feature or bug. If you want to contribute code, please create a pull request. If you want to add a new feature, please create an issue first to discuss if it is a good fit for the project. Refer to the [contribution guidelines](CONTRIBUTING.md) for more information.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
+
 ## License
 
 SISwift is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
