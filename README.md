@@ -34,7 +34,7 @@ Features:
 [Swift Package Manager](https://swift.org/package-manager/) is the simplest way to install for Xcode projects. Simply add the following Package Dependency:
 
 ```
-https://github.com/dan-koller/SISwift
+https://github.com/dan-koller/siswift
 ```
 
 ### Carthage
@@ -42,7 +42,7 @@ https://github.com/dan-koller/SISwift
 Include this line in your `Cartfile`:
 
 ```
-github "dan-koller/SISwift"
+github "dan-koller/siswift"
 ```
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png">
